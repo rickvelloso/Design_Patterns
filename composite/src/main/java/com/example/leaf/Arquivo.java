@@ -10,8 +10,8 @@ public class Arquivo implements Item {
     }
 
     @Override
-    public void exibir() {
-        System.out.println(nome);
+    public void exibir(String prefixo) {
+        System.out.println(prefixo + "- " + nome);
     }
 
 }
