@@ -1,5 +1,9 @@
 package com.example;
 
+import com.example.gateway.GatewayPagamento;
+import com.example.gateway.GatewayPayPal;
+import com.example.pagamento.Pagamento;
+import com.example.pagamento.PagamentoCartao;
 import com.example.user_factory.User;
 import com.example.user_factory.UserFactory;
 import com.example.video_factory.Video;
@@ -35,10 +39,15 @@ public class Main {
         Video videoHLS = VideoFactory.createVideo("hls");
         Video videoMPEG = VideoFactory.createVideo("mpeg");
 
-        // Usuário gratuito pode assistir a qualquer formato
         userGratuito.exibirVideo(videoHLS);
 
-        // Usuário premium pode assistir a qualquer formato
-        userPremium.exibirVideo(videoMPEG);
+        GatewayPagamento gatewayPayPal = new GatewayPayPal();
+        Pagamento metodoPagamento = new PagamentoCartao(gatewayPayPal);
+
+        userGratuito.realizarPagamento("mensal", gatewayPayPal, metodoPagamento);
+
+        userGratuito.exibirVideo(videoMPEG);
+
+        
     }
 }
