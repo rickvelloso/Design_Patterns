@@ -3,11 +3,11 @@ import com.example.prototype.CarroPrototype;
 
 public class Carro implements CarroPrototype {
 
-    private final String modelo;
-    private final String cor;
-    private final int ano;
-    private final double preco;
-    private final String estadoDeConservacao;
+    private String modelo;
+    private String cor;
+    private int ano;
+    private double preco;
+    private String estadoDeConservacao;
 
     public Carro(String modelo, String cor, int ano, double preco, String estadoDeConservacao) {
         this.modelo = modelo;
@@ -41,6 +41,27 @@ public class Carro implements CarroPrototype {
     public CarroPrototype clonar() {
         return new Carro(modelo, cor, ano, preco, estadoDeConservacao);
     }
+
+    public void alterarCor(String cor) {
+        this.cor = cor;
+    }
+
+    public void alterarPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public void alterarEstadoDeConservacao(String estadoDeConservacao) {
+        this.estadoDeConservacao = estadoDeConservacao;
+    }
+
+    public void alterarAno(int ano) {
+        this.ano = ano;
+    }
+
+    public void alterarModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
 
     public void imprimir() {
         System.out.println("Imprimindo carro: " + modelo);

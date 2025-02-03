@@ -10,8 +10,9 @@ public class Main {
 
         Carro carroClonado = (Carro) carroOriginal.clonar();
 
-        carroClonado = new Carro(carroClonado.getModelo(), "Azul", carroClonado.getAno(), carroClonado.getPreco(), carroClonado.getEstadoDeConservacao());      
-
+        carroClonado.alterarCor("Azul");
+        carroClonado.alterarPreco(15000);
+        carroClonado.alterarEstadoDeConservacao("Novo");
         carroClonado.imprimir();
     }
 }
