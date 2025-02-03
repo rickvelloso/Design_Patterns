@@ -3,10 +3,10 @@ package com.example.models;
 import com.example.prototype.Prototype;
 
 public class Documento implements Prototype{
-    private String nome;
-    private String tipo;
-    private String conteudo;
-    private String autor;
+    private final String nome;
+    private final String tipo;
+    private final String conteudo;
+    private final String autor;
 
     public Documento(String nome, String tipo, String conteudo, String autor) {
         this.nome = nome;
